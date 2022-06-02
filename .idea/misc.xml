@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/app_bg.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/home_acadamic_yr_txt_bg.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/home_academic_year_text_bg.xml" value="0.3315" />
         <entry key="app/src/main/res/drawable/home_bg.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/home_image_item_bg.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/home_img_items_bg.xml" value="0.237" />
@@ -12,12 +13,14 @@
         <entry key="app/src/main/res/drawable/home_items_bg.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/home_items_card_bg.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/home_items_card_bg_foreground.xml" value="0.237" />
+        <entry key="app/src/main/res/drawable/home_notification_txt_bg.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/ic_outline_notifications_active_24.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/login_bg.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/login_card_bg.xml" value="0.237" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3203125" />
-        <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.3203125" />
+        <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_login_screen.xml" value="0.3203125" />
+        <entry key="app/src/main/res/layout/home_notification_icon.xml" value="2.6666666666666665" />
         <entry key="app/src/main/res/layout/home_screen_card_content.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/menu/home_screen_menu.xml" value="0.3203125" />
       </map>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.appbar.AppBarLayout
 import com.unikey.android.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,6 +37,11 @@ class LoginScreenFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login_screen, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        activity?.findViewById<AppBarLayout>(R.id.main_app_bar)?.visibility = View.GONE
     }
 
     companion object {

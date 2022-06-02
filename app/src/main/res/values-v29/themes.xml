@@ -31,7 +31,7 @@
         <item name="colorPrimaryInverse">@color/md_theme_light_primaryInverse</item>
 
         <!--        Make StatusBar & NavigationBar transparent-->
-        <item name="android:statusBarColor">@color/md_theme_light_primary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@color/md_theme_dark_onBackground</item>
         <item name="android:windowLightStatusBar">false</item>
 

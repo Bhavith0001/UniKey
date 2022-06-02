@@ -14,7 +14,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="155dp"
             android:layout_gravity="center_vertical">
 
             <LinearLayout
@@ -32,37 +32,50 @@
                     style="@style/TextAppearance.Material3.HeadlineLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="4dp"
                     android:gravity="center_vertical"
                     android:textColor="@color/md_theme_light_onPrimary"
-                    tools:text="Bhavith K" />
+                    android:text="Bhavith K" />
 
                 <TextView
                     android:id="@+id/user_info"
                     style="@style/TextAppearance.Material3.BodyMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="4dp"
                     android:textColor="@color/md_theme_light_onPrimary"
-                    tools:text="3rd BCA" />
+                    android:text="3rd BCA" />
 
-                <TextView
-                    android:id="@+id/academic_year"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="2dp"
-                    android:background="@drawable/home_academic_year_text_bg"
-                    android:minWidth="90dp"
-                    android:paddingHorizontal="8dp"
-                    android:textColor="@color/md_theme_light_secondary"
-                    android:textStyle="normal"
-                    tools:text="2021 | 2022" />
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/academic_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="2dp"
+                        android:background="@drawable/home_academic_year_text_bg"
+                        android:minWidth="90dp"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:textColor="@color/md_theme_light_secondary"
+                        android:textStyle="normal"
+                        android:text="2021 | 2022" />
+
+                    <include layout="@layout/home_notification_icon" />
+
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginEnd="48dp"
                 android:background="@drawable/profile_bg"
                 android:elevation="10dp"

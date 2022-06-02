@@ -13,8 +13,8 @@
 
     <!--   Home content items style   -->
     <style name="Widget.UniKey.HomeContent.ImageButton" parent="Widget.AppCompat.ImageButton">
-        <item name="android:layout_width">176dp</item>
-        <item name="android:layout_height">127dp</item>
+        <item name="android:layout_width">170dp</item>
+        <item name="android:layout_height">122dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:background">@drawable/home_img_items_bg</item>

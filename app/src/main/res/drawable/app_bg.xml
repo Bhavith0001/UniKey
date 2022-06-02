@@ -5,5 +5,5 @@
         android:angle="270"
         android:type="linear"
         android:startColor="@color/md_theme_light_primary"
-        android:endColor="@color/md_theme_dark_onBackground"  />
+        android:endColor="@color/md_theme_light_onPrimaryContainer"  />
 </shape>
