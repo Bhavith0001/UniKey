@@ -20,4 +20,9 @@
         <item name="android:background">@drawable/home_img_items_bg</item>
     </style>
 
+    <!--  Login Input text filed style -->
+    <style name="Widget.UniKey.TextInputLayout.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+
+    </style>
+
 </resources>

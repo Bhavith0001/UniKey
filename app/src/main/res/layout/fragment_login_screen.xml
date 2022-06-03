@@ -46,10 +46,11 @@
             android:layout_marginTop="20dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                style="@style/Widget.UniKey.TextInputLayout.OutlinedBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="6dp"
                 android:hint="E-mail"
                 app:placeholderText="Enter your Email">
 
@@ -61,11 +62,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                style="@style/Widget.UniKey.TextInputLayout.OutlinedBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="6dp"
                 app:placeholderText="Enter your password"
                 app:endIconMode="password_toggle"
                 app:passwordToggleEnabled="true">
@@ -91,6 +93,7 @@
                 android:text="Forget password"
                 android:clickable="true"
                 android:focusable="true"
+                android:textColor="@color/md_theme_light_tertiary"
                 android:contextClickable="true"/>
 
 
