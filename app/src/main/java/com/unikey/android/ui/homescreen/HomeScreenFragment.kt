@@ -42,6 +42,7 @@ class HomeScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.findViewById<AppBarLayout>(R.id.main_app_bar)?.visibility = View.GONE
+//        activity?.window?.navigationBarColor = resources.getColor(R.color.md_theme_dark_onBackground)
     }
 
     companion object {

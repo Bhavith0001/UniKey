@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".ui.loginscreen.LoginScreenFragment">
 
     <LinearLayout
@@ -25,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign in to continue"
+            android:text="Sign in to continue..."
             style="@style/TextAppearance.Material3.BodyMedium"
             android:textSize="18sp"
             android:textStyle="normal"
@@ -47,11 +48,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.UniKey.TextInputLayout.OutlinedBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="6dp"
-                android:hint="E-mail"
+                android:hint="@string/e_mail"
                 app:placeholderText="Enter your Email">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -63,13 +60,8 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.UniKey.TextInputLayout.OutlinedBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="6dp"
+                android:hint="@string/password"
                 app:placeholderText="Enter your password"
-                app:endIconMode="password_toggle"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -80,7 +72,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/open_sec"
+                android:id="@+id/btn_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minWidth="200dp"
@@ -90,11 +82,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Forget password"
+                android:text="@string/forget_password"
                 android:clickable="true"
                 android:focusable="true"
-                android:textColor="@color/md_theme_light_tertiary"
-                android:contextClickable="true"/>
+                android:textColor="@color/md_theme_light_tertiary" />
 
 
         </LinearLayout>

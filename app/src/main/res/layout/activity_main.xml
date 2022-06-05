@@ -42,5 +42,4 @@
             app:navGraph="@navigation/nav_graph"
             android:name="androidx.navigation.fragment.NavHostFragment" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

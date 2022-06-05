@@ -33,7 +33,7 @@
         <!--  Background drawable for the whole application
         (can be overridden in activities or fragment or other -->
         <item name="android:windowBackground">@drawable/app_bg</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/transparent</item>
     </style>
 
 </resources>

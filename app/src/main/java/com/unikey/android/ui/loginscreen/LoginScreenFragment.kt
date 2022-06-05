@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.core.view.WindowCompat
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.appbar.AppBarLayout
 import com.unikey.android.R
 
@@ -41,7 +44,15 @@ class LoginScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity?.findViewById<AppBarLayout>(R.id.main_app_bar)?.visibility = View.GONE
+        activity?.apply {
+            findViewById<AppBarLayout>(R.id.main_app_bar)?.visibility = View.GONE
+//            window?.navigationBarColor = resources.getColor(R.color.transparent)
+        }
+
+        val btnLogin = view.findViewById<Button>(R.id.btn_login)
+        btnLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_loginScreenFragment_to_homeScreenFragment)
+        }
     }
 
     companion object {

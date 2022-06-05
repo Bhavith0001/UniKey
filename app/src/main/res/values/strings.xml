@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">UniKey</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ask_doubts">Ask Doubts</string>
+    <string name="placements">Placements</string>
+    <string name="result">Result</string>
+    <string name="time_table">Time table</string>
+    <string name="events">Events</string>
+    <string name="departments">Departments</string>
+    <string name="materials">Materials</string>
+    <string name="about">About</string>
+    <string name="gallery">Gallery</string>
+    <string name="calender">Calender</string>
+    <string name="fees_due">Fees Due</string>
+    <string name="attendance">Attendance</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget password</string>
 </resources>
