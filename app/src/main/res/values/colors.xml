@@ -58,5 +58,7 @@
     <color name="md_theme_dark_shadow">#000000</color>
     <color name="md_theme_dark_primaryInverse">#3D3AFF</color>
 
+    <color name="pink">#F500F9</color>
+
     <color name="transparent">@android:color/transparent</color>
 </resources>
