@@ -26,7 +26,7 @@ class AddStudyMaterialsFragment : Fragment() {
     private var pdfUri: Uri? = null
 
     private lateinit var binding: FragmentAddStudyMaterilasBinding
-    private val viewModel: StudyMaterialsViewModel by viewModels()
+    private val viewModel: StudyMaterialsViewModel by viewModels() // dh
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
