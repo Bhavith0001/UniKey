@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/home_items_card_bg_background"/>
+    <item
+        android:top="230dp"
+        android:drawable="@drawable/home_items_card_bg_foreground"
+        android:gravity="bottom"/>
+</layer-list>

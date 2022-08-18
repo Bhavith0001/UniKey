@@ -3,7 +3,7 @@
     <item
         android:drawable="@drawable/home_items_card_bg_background"/>
     <item
-        android:top="90dp"
+        android:top="60dp"
         android:drawable="@drawable/home_items_card_bg_foreground"
         android:gravity="bottom"/>
 </layer-list>

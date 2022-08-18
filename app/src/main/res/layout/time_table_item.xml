@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/time_table_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Date : 02-03-2022"
+            android:layout_margin="8dp"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/time_1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                tools:text="1st internal exam"
+                android:layout_margin="10dp" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="1pt"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/sub_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1st internal exam"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1pt"/>
+        <LinearLayout
+            android:id="@+id/second_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/time_2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                tools:text="1st internal exam"
+                android:layout_margin="10dp"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="1pt"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/sub_name_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1st internal exam"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.result.ResultFragment">
+
+    <include android:id="@+id/app_bar"
+        layout="@layout/app_bar"/>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_items_card_bg_foreground"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/input_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <include android:id="@+id/input_reg_no"
+                layout="@layout/result_input_field"/>
+            <include android:id="@+id/input_sem"
+                layout="@layout/result_input_field"/>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/results_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_margin="8dp">
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/student_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Name : Bhavith K"/>
+
+                    <TextView
+                        android:id="@+id/reg_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Reg.No : 192292"/>
+
+                    <TextView
+                        android:id="@+id/sem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="SEM : 5"/>
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginHorizontal="4dp"/>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/Result.Heading.Divider.Unikey"/>
+
+                        <!--  Subject Code -->
+                        <TextView
+                            android:id="@+id/sub_code"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Result.Heading.Unikey.TextView"
+                            android:text="Sub Code"/>
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/Result.Heading.Divider.Unikey"/>
+
+                        <!--  Subject Name -->
+                        <TextView
+                            android:id="@+id/sub_name"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Result.Heading.Unikey.TextView"
+                            android:text="Sub Name"/>
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/Result.Heading.Divider.Unikey"/>
+
+                        <!--  type -->
+                        <TextView
+                            android:id="@+id/type"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Result.Heading.Unikey.TextView"
+                            android:text="Type"/>
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/Result.Heading.Divider.Unikey"/>
+
+                        <!--  max -->
+                        <TextView
+                            android:id="@+id/max"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Result.Heading.Unikey.TextView"
+                            android:text="Max"/>
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/Result.Heading.Divider.Unikey"/>
+
+                        <!--  Marks -->
+                        <TextView
+                            android:id="@+id/marks"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Result.Heading.Unikey.TextView"
+                            android:text="Marks"/>
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/Result.Heading.Divider.Unikey"/>
+
+                        <!--  Pass/Fail -->
+                        <TextView
+                            android:id="@+id/pass_fail"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Result.Heading.Unikey.TextView"
+                            android:text="Pass/Fail"/>
+                        <com.google.android.material.divider.MaterialDivider
+                            style="@style/Result.Heading.Divider.Unikey"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="4dp"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/results_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/result_sub_item"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </HorizontalScrollView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

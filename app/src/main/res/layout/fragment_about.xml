@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.about.AboutFragment">
+
+    <include android:id="@+id/app_bar"
+        layout="@layout/app_bar"/>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_items_card_bg_foreground"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/college_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="UniKey"
+            style="@style/TextAppearance.Material3.HeadlineLarge"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_marginVertical="4dp"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/about_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            tools:text="This appd jnddsl fdsnmcbdscd cdshjcbdshdms jcydsbcbds ldsnmc dbcdnm czc mbcm cchjcxzcnzx cxczxc.dcd  dcnd c scdc dscds  ddcd cdjndjncd"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -4,18 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.homescreen.HomeScreenFragment"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:background="@drawable/home_scroll_view_bg"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.homescreen.HomeScreenFragment">
 
-    <LinearLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:transitionGroup="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/upper_card"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_marginTop="15dp"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_gravity="center_vertical">
 
             <LinearLayout
@@ -36,10 +40,10 @@
                     android:layout_marginVertical="4dp"
                     android:gravity="center_vertical"
                     android:textColor="@color/md_theme_light_onPrimary"
-                    android:text="Bhavith K" />
+                    tools:text="Johny" />
 
                 <TextView
-                    android:id="@+id/user_info"
+                    android:id="@+id/cls_info"
                     style="@style/TextAppearance.Material3.BodyMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -67,34 +71,47 @@
                         android:textStyle="normal"
                         android:text="2021 | 2022" />
 
-                    <include layout="@layout/home_notification_icon" />
+                    <include
+                        android:id="@+id/not_icon"
+                        layout="@layout/home_notification_icon" />
 
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="48dp"
-                android:background="@drawable/profile_bg"
-                android:elevation="10dp"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.516"
-                tools:src="@drawable/ic_launcher_foreground" />
+                android:layout_marginEnd="48dp"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintVertical_bias="0.516">
+
+                <ImageView
+                    android:id="@+id/profile_icon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:elevation="10dp"
+                    tools:src="@drawable/ic_launcher_foreground" />
+
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/home_items_card_bg">
-            <include layout="@layout/home_screen_card_content" />
+            android:background="@drawable/home_items_card_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upper_card">
 
+            <include
+                android:id="@+id/home_content"
+                layout="@layout/home_screen_card_content" />
         </FrameLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

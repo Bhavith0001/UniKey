@@ -1,34 +1,37 @@
 package com.unikey.android.ui.homescreen
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.appbar.AppBarLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.google.android.material.transition.MaterialElevationScale
+import com.google.android.material.transition.MaterialSharedAxis
+import com.google.android.material.transition.MaterialSharedAxis.X
+import com.google.android.material.transition.MaterialSharedAxis.Z
+import com.unikey.android.ANIM_DURATION
 import com.unikey.android.R
+import com.unikey.android.databinding.FragmentHomeScreenBinding
+import com.unikey.android.objects.User
+import com.unikey.android.setHostSharedAxisAnim
+import com.unikey.android.setTargetSharedAxisAnim
+import com.unikey.android.ui.profile.ProfileFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeScreenFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeScreenFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var binding: FragmentHomeScreenBinding
+
+    //Instance of HomeScreen ViewModel
+    private val viewModel: HomeScreenViewModel by viewModels()
+    private lateinit var user: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        setTargetSharedAxisAnim(Z)
     }
 
     override fun onCreateView(
@@ -36,32 +39,171 @@ class HomeScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_screen, container, false)
+        binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity?.findViewById<AppBarLayout>(R.id.main_app_bar)?.visibility = View.GONE
-//        activity?.window?.navigationBarColor = resources.getColor(R.color.md_theme_dark_onBackground)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeScreenFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeScreenFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        viewModel.user?.observe(viewLifecycleOwner){
+            if (it != null) {
+                viewModel.getAttendanceAndFees()
+                user = it
+                binding.run {
+                    userName.text = it.name
+                    clsInfo.text = it.cls
+                    academicYear.text = it.academicYear
+                }
+                if (it.isStudent == true) {
+                    binding.homeContent.feesCardView.visibility = View.VISIBLE
+                    binding.homeContent.attendanceCardView.visibility = View.VISIBLE
+                } else {
+                    binding.homeContent.feesCardView.visibility = View.GONE
+                    binding.homeContent.attendanceCardView.visibility = View.GONE
+                }
+
+                setProfilePic(user)
+            }
+        }
+
+        viewModel.averageAttendance.observe(viewLifecycleOwner){
+            binding.homeContent.attendancePercentTxtView.text = "$it%"
+        }
+
+        viewModel.pendingFees.observe(viewLifecycleOwner){
+            binding.homeContent.feesAmountTxtView.text = "₹"+(it.total?.minus(it.paid!!)).toString()
+        }
+
+        //navigate to profile_fragment
+        binding.profileIcon.setOnClickListener {
+            openProfile()
+        }
+
+        binding.notIcon.notificationIcon.setOnClickListener {
+            openNotifications()
+        }
+
+        binding.homeContent.run{
+            attendanceCardView.setOnClickListener {
+                val attendanceDetailTransitionName = getString(R.string.attendance_detail_transition_name)
+                val extras =
+                    FragmentNavigatorExtras(binding.homeContent.attendanceCardView to attendanceDetailTransitionName)
+                findNavController().navigate(
+                    HomeScreenFragmentDirections.actionHomeScreenFragmentToAttendanceFragment(),
+                    extras
+                )
+                setScaleAnim()
+            }
+
+            feesCardView.setOnClickListener {
+                val feesDetailTransitionName = getString(R.string.fees_detail_transition_name)
+                val extras =
+                    FragmentNavigatorExtras(binding.homeContent.feesCardView to feesDetailTransitionName)
+                findNavController().navigate(
+                    HomeScreenFragmentDirections.actionHomeScreenFragmentToFeesFragment(),
+                    extras
+                )
+                setScaleAnim()
+//                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToFeesFragment())
+            }
+
+            calender.setOnClickListener {
+                setHostSharedAxisAnim(X)
+                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToCalenderFragment())
+            }
+
+            materials.setOnClickListener {
+                if (user.isStudent == true) {
+                    setHostSharedAxisAnim(X)
+                    findNavController().navigate(
+                        HomeScreenFragmentDirections
+                            .actionHomeScreenFragmentToSubjectsFragment()
+                    )
+                }
+                else {
+                    setHostSharedAxisAnim(X)
+                    findNavController().navigate(
+                        HomeScreenFragmentDirections
+                            .actionHomeScreenFragmentToAddStudyMaterialsFragment()
+                    )
                 }
             }
+
+            gallery.setOnClickListener {
+                setHostSharedAxisAnim(X)
+                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToGalleryFragment())
+            }
+
+            courses.setOnClickListener {
+                setHostSharedAxisAnim(X)
+                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToCoursesFragment())
+            }
+
+            jobAlerts.setOnClickListener {
+                setHostSharedAxisAnim(X)
+                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToJobsAletrsFragment())
+            }
+
+            about.setOnClickListener {
+                setHostSharedAxisAnim(X)
+                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToAboutFragment())
+            }
+
+//            timeTable.setOnClickListener {
+//                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToTimeTableFragment())
+//            }
+//
+//            results.setOnClickListener {
+//                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToResultFragment())
+//            }
+
+        }
+
     }
+
+    private fun setScaleAnim(){
+        exitTransition = MaterialElevationScale(false).apply {
+            duration = ANIM_DURATION
+        }
+
+        reenterTransition = MaterialElevationScale(true).apply {
+            duration = ANIM_DURATION
+        }
+    }
+
+    private fun setProfilePic(user: User?) {
+        Glide.with(this)
+            .load(user?.profileUrl)
+            .placeholder(R.drawable.ic_account_24)
+            .into(binding.profileIcon)
+    }
+
+    private fun openNotifications() {
+        setHostSharedAxisAnim(Z)
+        findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToNotificationsFragment())
+    }
+
+//    private fun setSharedAxisAnim(axis: Int) {
+//        exitTransition = MaterialSharedAxis(axis, true).apply {
+//            duration = ANIM_DURATION
+//        }
+//
+//        reenterTransition = MaterialSharedAxis(axis, false).apply {
+//            duration = ANIM_DURATION
+//        }
+//    }
+
+    override fun onStart() {
+        super.onStart()
+        if (!viewModel.isAuthenticated())
+            findNavController().navigate(HomeScreenFragmentDirections.actionGlobalLoginScreenFragment())
+    }
+
+    /** Navigates to [ProfileFragment]*/
+    private fun openProfile(){
+        setHostSharedAxisAnim(X)
+        findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
+    }
+
 }

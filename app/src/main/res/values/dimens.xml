@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="home_item_text_5dp_margin">5dp</dimen>
+    <dimen name="send_notify_divider_margin">6dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

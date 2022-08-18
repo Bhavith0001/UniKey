@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/app_bg"
+    tools:context=".ui.notifications.NotificationContentFragment">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:background="@drawable/home_items_card_bg_foreground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/content_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:gravity="center_vertical"
+                tools:text="This is title"
+                android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                android:textStyle="bold" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10dp"/>
+
+            <TextView
+                android:id="@+id/notify_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="dhddhdh  ddbkdkd sd dhsds
+        d s  sddhddhdh  ddbkdkd sd dhs
+        ds d s  sd  d sd s dsjjdhddhdh  ddbk
+        dkd sd dhsds d s  sd  d sd s dsjjdhddh
+        dh  ddbkdkd sd dhsds d s  sd  d sd s dsjj
+        dhddhdh  ddbkdkd sd dhsds d s  sd  d sd s d
+        sjj  d sd s dsjjd"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

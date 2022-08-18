@@ -42,7 +42,7 @@
     <color name="md_theme_dark_tertiaryContainer">#5F3C51</color>
     <color name="md_theme_dark_onTertiaryContainer">#FFD7EE</color>
     <color name="md_theme_dark_error">#FFB4A9</color>
-    <color name="md_theme_dark_errorContainer">#930006</color>
+    <color name="md_theme_dark_errorContainer">#DB8589</color>
     <color name="md_theme_dark_onError">#680003</color>
     <color name="md_theme_dark_onErrorContainer">#FFDAD4</color>
     <color name="md_theme_dark_background">#1B1B1F</color>
@@ -58,7 +58,11 @@
     <color name="md_theme_dark_shadow">#000000</color>
     <color name="md_theme_dark_primaryInverse">#3D3AFF</color>
 
-    <color name="pink">#F500F9</color>
+    <color name="divider_color">#9FBAB8B8</color>
 
     <color name="transparent">@android:color/transparent</color>
+
+    <color name="light_green">#97fffd</color>
+
+    <color name="test">#FFFF00FF</color>
 </resources>

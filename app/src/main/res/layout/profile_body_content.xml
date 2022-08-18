@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:background="@color/md_theme_light_primaryContainer">
+
+
+
+    <!-- Date of Email id -->
+    <TextView
+        android:text="Email ID"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/email"
+        tools:text="student@mail.com"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+
+
+    <!-- Date of Contact number -->
+    <TextView
+        android:text="Phone"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/phone_no"
+        tools:text="9027518724"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+
+
+    <!-- Date of Birth field -->
+    <TextView
+        android:text="Date of Birth"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/d_o_b"
+        tools:text="12-03-2001"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+
+
+    <!-- Class an section field -->
+    <TextView
+        android:id="@+id/cls_label"
+        android:text="Class"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/cls"
+        tools:text="3rd BCA"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+    <!-- SEM field -->
+    <TextView
+        android:id="@+id/sem_label"
+        android:text="SEM"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/sem"
+        tools:text="3rd BCA"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+    <!-- Academic year field -->
+    <TextView
+        android:text="Academic year"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/academic_year"
+        tools:text="2021-2022"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+
+
+    <!-- Date of admission field -->
+    <TextView
+        android:id="@+id/d_o_a_label"
+        android:text="Date of Admission"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/date_of_admission"
+        tools:text="01-06-2019"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+
+
+    <!-- Date of Fathers name -->
+    <TextView
+        android:text="Father's name"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/father_name"
+        tools:text="Tony"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+
+
+    <!-- Date of Mother's name -->
+    <TextView
+        android:text="Mother's"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/mother_name"
+        tools:text="Monica"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+
+
+    <!-- Date of Permanent address -->
+    <TextView
+        android:text="Address"
+        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>
+
+    <TextView
+        android:id="@+id/address"
+        tools:text="Mr John Smith. 132, My Street, Kingston, New York 12401"
+        style="@style/Widget.UniKey.Profile.Label.TextView"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.UniKey.Profile.Label.Divider"/>
+
+
+
+<!--    &lt;!&ndash; Date of Current address &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:text="Current address"-->
+<!--        style="@style/Widget.UniKey.Profile.LabelHead.TextView"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/c_address"-->
+<!--        tools:text="Mr John Smith. 132, My Street, Kingston, New York 12401"-->
+<!--        style="@style/Widget.UniKey.Profile.Label.TextView"/>-->
+
+<!--    <com.google.android.material.divider.MaterialDivider-->
+<!--        style="@style/Widget.UniKey.Profile.Label.Divider"/>-->
+
+</LinearLayout>

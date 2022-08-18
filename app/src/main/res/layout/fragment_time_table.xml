@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.timetable.TimeTableFragment">
+
+    <include android:id="@+id/app_bar"
+        layout="@layout/app_bar"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/home_items_card_bg_foreground">
+
+        <TextView
+            android:id="@+id/time_table_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="1st internal exam"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginVertical="6dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/time_table_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/time_table_item"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

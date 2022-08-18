@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_light_primaryContainer"
+    android:fitsSystemWindows="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="?attr/actionBarItemBackground"
+            android:padding="12dp"
+            android:src="@drawable/ic_close_24"
+            app:layout_constraintEnd_toStartOf="@+id/n_title_txt"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/n_title_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:backgroundTint="@color/transparent"
+            android:hint="Title"
+            android:inputType="textMultiLine|textLongMessage|textCapSentences"
+            android:minHeight="48dp"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/send_notification_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/close_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <ImageButton
+            android:id="@+id/send_notification_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:padding="12dp"
+            android:background="?attr/actionBarItemBackground"
+            android:src="@drawable/ic_send_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/n_title_txt"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/md_theme_light_primary" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/send_notify_divider_margin"
+            app:dividerColor="@color/divider_color"
+            app:layout_constraintTop_toBottomOf="@id/n_title_txt" />
+
+        <EditText
+            android:id="@+id/n_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
+            android:hint="Description"
+            android:inputType="textMultiLine|textLongMessage|textCapSentences"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/send_notify_divider_margin"
+            app:dividerColor="@color/divider_color"
+            app:layout_constraintTop_toBottomOf="@id/n_description" />
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/add_recipient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2"
+            android:scrollbars="none"
+            android:minHeight="48dp"
+            android:overScrollMode="never"
+            android:requiresFadingEdge="horizontal"
+            android:fadingEdgeLength="24dp"
+            android:clipToPadding="false">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/recipient_chip_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:singleLine="true"
+                android:layoutDirection="locale"/>
+
+        </HorizontalScrollView>
+
+        <ImageButton
+            android:id="@+id/add_recipient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/actionBarItemBackground"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_add_circle_outline_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/send_notify_divider_margin"
+            app:dividerColor="@color/divider_color"
+            app:layout_constraintTop_toBottomOf="@id/add_recipient" />
+
+        <EditText
+            android:id="@+id/n_content_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
+            android:gravity="top"
+            android:hint="Message Content..."
+            android:inputType="textMultiLine|textLongMessage|textCapSentences"
+            android:minHeight="200dp"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

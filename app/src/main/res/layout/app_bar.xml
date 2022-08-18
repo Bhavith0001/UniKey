@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/app_bar_layout"
+    style="@style/Unikey.Widget.AppBarLayout"
+    app:liftOnScroll="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tool_bar"
+        style="@style/Unikey.Widget.AppCompat.Toolbar"
+        app:layout_scrollFlags="scroll|enterAlways|snap" />
+</com.google.android.material.appbar.AppBarLayout>

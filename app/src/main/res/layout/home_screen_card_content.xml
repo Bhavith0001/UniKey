@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="70dp"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,12 +13,14 @@
         android:layout_marginBottom="8dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView2"
+            android:id="@+id/attendance_card_view"
             style="@style/Widget.UniKey.HomeContent.CardView"
-            app:layout_constraintEnd_toStartOf="@+id/materialCardView"
+            app:layout_constraintEnd_toStartOf="@+id/fees_card_view"
             app:layout_constraintHorizontal_bias="0.5"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:transitionName="@string/attendance_card_transition_name">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -33,10 +36,11 @@
                     android:src="@drawable/icon_attendance" />
 
                 <TextView
+                    android:id="@+id/attendance_percent_txt_view"
                     style="@style/TextAppearance.Material3.HeadlineLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="80.39%"
+                    tools:text="80.39%"
                     android:textStyle="bold" />
 
                 <TextView
@@ -49,12 +53,14 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView"
+            android:id="@+id/fees_card_view"
             style="@style/Widget.UniKey.HomeContent.CardView"
             app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/materialCardView2"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toEndOf="@+id/attendance_card_view"
+            app:layout_constraintTop_toTopOf="parent"
+            android:transitionName="@string/fees_card_transition_name">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -70,10 +76,11 @@
                     android:src="@drawable/icon_fees_due" />
 
                 <TextView
+                    android:id="@+id/fees_amount_txt_view"
                     style="@style/TextAppearance.Material3.HeadlineLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="₹6400"
+                    tools:text="₹6400"
                     android:textStyle="bold" />
 
                 <TextView
@@ -94,64 +101,59 @@
             app:layout_constraintEnd_toStartOf="@+id/linearLayout"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/materialCardView2">
+            app:layout_constraintTop_toBottomOf="@id/attendance_card_view">
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+            <LinearLayout android:id="@+id/calender"
+                style="@style/Widget.UniKey.HomeContent.Item"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
+                    style="@style/Widget.UniKey.ImageView"
                     android:src="@drawable/icon_calender" />
 
                 <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
+                    style="@style/Widget.UniKey.HCI.TextView"
                     android:layout_marginStart="@dimen/home_item_text_5dp_margin"
                     android:text="@string/calender" />
             </LinearLayout>
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+            <LinearLayout android:id="@+id/gallery"
+                style="@style/Widget.UniKey.HomeContent.Item">
 
                 <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
+                    style="@style/Widget.UniKey.ImageView"
                     android:src="@drawable/icon_gallery" />
 
                 <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
+                    style="@style/Widget.UniKey.HCI.TextView"
                     android:text="@string/gallery" />
             </LinearLayout>
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+            <LinearLayout android:id="@+id/job_alerts"
+                style="@style/Widget.UniKey.HomeContent.Item">
 
                 <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
+                    style="@style/Widget.UniKey.ImageView"
                     android:src="@drawable/icon_job_placement" />
 
                 <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
-                    android:text="@string/placements" />
+                    style="@style/Widget.UniKey.HCI.TextView"
+                    android:text="@string/job_alerts" />
             </LinearLayout>
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+<!--            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">-->
 
-                <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
-                    android:src="@drawable/icon_ask_questions" />
+<!--                <ImageView-->
+<!--                    style="@style/Widget.UniKey.ImageView"-->
+<!--                    android:src="@drawable/icon_ask_questions" />-->
 
-                <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
-                    android:text="@string/ask_doubts" />
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    style="@style/Widget.UniKey.HCI.TextView"-->
+<!--                    android:text="@string/ask_doubts" />-->
+<!--            </LinearLayout>-->
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
 
-                <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
-                    android:src="@drawable/icon_about" />
-
-                <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
-                    android:text="@string/about"
-                    android:layout_marginStart="@dimen/home_item_text_5dp_margin"/>
-            </LinearLayout>
 
         </LinearLayout>
 
@@ -164,68 +166,80 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-            app:layout_constraintTop_toBottomOf="@id/materialCardView2">
+            app:layout_constraintTop_toBottomOf="@id/fees_card_view">
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+            <LinearLayout android:id="@+id/materials" style="@style/Widget.UniKey.HomeContent.Item">
 
                 <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
+                    style="@style/Widget.UniKey.ImageView"
                     android:src="@drawable/icon_book_materials" />
 
                 <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
+                    style="@style/Widget.UniKey.HCI.TextView"
                     android:text="@string/materials" />
             </LinearLayout>
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+            <LinearLayout android:id="@+id/courses" style="@style/Widget.UniKey.HomeContent.Item">
 
                 <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
-                    android:src="@drawable/icon_departments" />
+                    style="@style/Widget.UniKey.ImageView"
+                    android:src="@drawable/courses" />
 
                 <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
-                    android:text="@string/departments" />
+                    style="@style/Widget.UniKey.HCI.TextView"
+                    android:text="@string/certificate_courses" />
             </LinearLayout>
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+            <LinearLayout android:id="@+id/about"
+                style="@style/Widget.UniKey.HomeContent.Item">
 
                 <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
-                    android:src="@drawable/icon_events" />
+                    style="@style/Widget.UniKey.ImageView"
+                    android:src="@drawable/icon_about" />
 
                 <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
-                    android:text="@string/events"
+                    style="@style/Widget.UniKey.HCI.TextView"
+                    android:text="@string/about"
                     android:layout_marginStart="@dimen/home_item_text_5dp_margin"/>
             </LinearLayout>
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+<!--            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">-->
 
-                <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
-                    android:src="@drawable/icon_exam_time_table" />
+<!--                <ImageView-->
+<!--                    style="@style/Widget.UniKey.ImageView"-->
+<!--                    android:src="@drawable/icon_events" />-->
 
-                <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
-                    android:text="@string/time_table" />
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    style="@style/Widget.UniKey.HCI.TextView"-->
+<!--                    android:text="@string/events"-->
+<!--                    android:layout_marginStart="@dimen/home_item_text_5dp_margin"/>-->
+<!--            </LinearLayout>-->
 
-            <LinearLayout style="@style/Widget.UniKey.HomeContent.Item">
+<!--            <LinearLayout android:id="@+id/time_table" style="@style/Widget.UniKey.HomeContent.Item">-->
 
-                <ImageView
-                    style="@style/Base.Widget.UniKey.ImageView"
-                    android:src="@drawable/icon_result" />
+<!--                <ImageView-->
+<!--                    style="@style/Widget.UniKey.ImageView"-->
+<!--                    android:src="@drawable/icon_exam_time_table" />-->
 
-                <TextView
-                    style="@style/Base.Widget.UniKey.TextView"
-                    android:text="@string/result"
-                    android:layout_marginStart="@dimen/home_item_text_5dp_margin"/>
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    style="@style/Widget.UniKey.HCI.TextView"-->
+<!--                    android:text="@string/time_table" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout android:id="@+id/results" style="@style/Widget.UniKey.HomeContent.Item">-->
+
+<!--                <ImageView-->
+<!--                    style="@style/Widget.UniKey.ImageView"-->
+<!--                    android:src="@drawable/icon_result" />-->
+
+<!--                <TextView-->
+<!--                    style="@style/Widget.UniKey.HCI.TextView"-->
+<!--                    android:text="@string/result"-->
+<!--                    android:layout_marginStart="@dimen/home_item_text_5dp_margin"/>-->
+<!--            </LinearLayout>-->
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </LinearLayout>

@@ -5,10 +5,10 @@
     <style name="Widget.UniKey.HomeContent.CardView" parent="Widget.Material3.CardView.Elevated">
         <item name="cardElevation">18dp</item>
         <item name="cornerRadius">16dp</item>
-        <item name="android:layout_marginTop">2dp</item>
-        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_margin">10dp</item>
         <item name="android:layout_height">202dp</item>
         <item name="android:layout_width">170dp</item>
+        <item name="cardBackgroundColor">@color/md_theme_light_inversePrimary</item>
     </style>
 
     <!--   Home content items style   -->
@@ -17,14 +17,13 @@
         <item name="android:layout_width">170dp</item>
         <item name="android:layout_height">122dp</item>
         <item name="android:padding">15dp</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_margin">8dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">@drawable/home_img_items_bg</item>
     </style>
 
     <!-- Home content items TextView style -->
-    <style name="Base.Widget.UniKey.TextView" parent="Base.Widget.AppCompat.TextView">
+    <style name="Widget.UniKey.HCI.TextView" parent="Base.Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -33,7 +32,7 @@
     </style>
 
     <!-- Home content items ImageView style -->
-    <style name="Base.Widget.UniKey.ImageView" parent="Base.Widget.AppCompat.ImageButton">
+    <style name="Widget.UniKey.ImageView" parent="Base.Widget.AppCompat.ImageButton">
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_width">40dp</item>
         <item name="android:scaleType">fitXY</item>
@@ -42,13 +41,102 @@
 
     <!--  Login Input text filed style -->
     <style name="Widget.UniKey.TextInputLayout.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
         <item name="android:layout_marginStart">6dp</item>
         <item name="android:layout_marginEnd">6dp</item>
         <item name="placeholderTextColor">@color/md_theme_light_outline</item>
+    </style>
+
+    <!--  Profile page Labels heading TextView (Class, DOB .etc) -->
+    <style name="Widget.UniKey.Profile.LabelHead.TextView" parent="Base.Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/md_theme_light_secondary</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <!--  Profile page Labels TextView (3rd BCA, 12-3-2001 .etc) -->
+    <style name="Widget.UniKey.Profile.Label.TextView" parent="Base.Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/md_theme_light_shadow</item>
+        <item name="android:layout_marginBottom">14dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
+    <style name="Widget.UniKey.Profile.Label.Divider" parent="Widget.Material3.MaterialDivider">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="Unikey.Widget.AppCompat.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="buttonGravity">center_vertical</item>
+        <item name="navigationIcon">@drawable/ic_baseline_navigate_before_24</item>
+        <item name="titleTextColor">@color/md_theme_light_onPrimary</item>
+    </style>
+
+    <style name="Unikey.Widget.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="Unikey.FeesLabel.TexView.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">60dp</item>
+    </style>
+
+    <style name="Unikey.FeesValues.TexView.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxWidth">50dp</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="Result.Heading.Unikey.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Result.Heading.Divider.Unikey" parent="Widget.Material3.MaterialDivider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+    </style>
+
+    <style name="Result.Value.Unikey.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Result.Value.Divider.Unikey" parent="Widget.Material3.MaterialDivider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
     </style>
 
 </resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.attendance.AttendanceFragment"
+    android:orientation="vertical"
+    android:background="@drawable/app_bg"
+    android:transitionName="@string/attendance_detail_transition_name">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_items_card_bg_foreground">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attendance_recycler_view"
+            android:layout_width="match_parent"
+            android:paddingTop="14dp"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/attendance_item"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

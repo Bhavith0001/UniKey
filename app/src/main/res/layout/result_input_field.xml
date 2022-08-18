@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+    android:hint="Reg.No"
+    android:id="@+id/detail_txt_input_layout"
+    android:layout_margin="6dp"
+    app:placeholderText="Enter Reg.No">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/detail_txt_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:minWidth="200dp"/>
+</com.google.android.material.textfield.TextInputLayout>

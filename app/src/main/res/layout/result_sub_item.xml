@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="5dp"/>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Result.Value.Divider.Unikey"/>
+
+        <!--   Subject Code -->
+        <TextView
+            android:id="@+id/sub_code_value"
+            android:layout_width="100dp"
+            style="@style/Result.Value.Unikey.TextView"
+            tools:text="BCACAC124"/>
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Result.Value.Divider.Unikey"/>
+
+        <!--   Subject Name -->
+        <TextView
+            android:id="@+id/sub_name_value"
+            android:layout_width="200dp"
+            style="@style/Result.Value.Unikey.TextView"
+            tools:text="Computer and communications networks"/>
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Result.Value.Divider.Unikey"/>
+
+        <!--   Type -->
+        <TextView
+            android:id="@+id/type_value"
+            android:layout_width="50dp"
+            style="@style/Result.Value.Unikey.TextView"
+            tools:text="T"/>
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Result.Value.Divider.Unikey"/>
+
+        <!--   Max -->
+        <TextView
+            android:id="@+id/max_value"
+            android:layout_width="50dp"
+            style="@style/Result.Value.Unikey.TextView"
+            tools:text="100"/>
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Result.Value.Divider.Unikey"/>
+
+        <!--   Marks -->
+        <TextView
+            android:id="@+id/marks_value"
+            android:layout_width="50dp"
+            style="@style/Result.Value.Unikey.TextView"
+            tools:text="89"/>
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Result.Value.Divider.Unikey"/>
+
+        <!--   Marks -->
+        <TextView
+            android:id="@+id/pass_fail_value"
+            android:layout_width="50dp"
+            style="@style/Result.Value.Unikey.TextView"
+            tools:text="Pass"/>
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/Result.Value.Divider.Unikey"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="4dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

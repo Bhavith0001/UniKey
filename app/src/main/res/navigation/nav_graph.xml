@@ -3,20 +3,150 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginScreenFragment">
+    app:startDestination="@id/main_nav">
 
-    <fragment
-        android:id="@+id/homeScreenFragment"
-        android:name="com.unikey.android.ui.homescreen.HomeScreenFragment"
-        android:label="fragment_home_screen"
-        tools:layout="@layout/fragment_home_screen" />
     <fragment
         android:id="@+id/loginScreenFragment"
         android:name="com.unikey.android.ui.loginscreen.LoginScreenFragment"
         android:label="fragment_login_screen"
         tools:layout="@layout/fragment_login_screen" >
         <action
-            android:id="@+id/action_loginScreenFragment_to_homeScreenFragment"
-            app:destination="@id/homeScreenFragment" />
+            android:id="@+id/action_loginScreenFragment_to_main_nav"
+            app:destination="@id/main_nav"
+            app:popUpTo="@id/loginScreenFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+    <navigation android:id="@+id/main_nav"
+        app:startDestination="@id/homeScreenFragment">
+        <fragment
+            android:id="@+id/homeScreenFragment"
+            android:name="com.unikey.android.ui.homescreen.HomeScreenFragment"
+            android:label="fragment_home_screen"
+            tools:layout="@layout/fragment_home_screen">
+            <action
+                android:id="@+id/action_homeScreenFragment_to_profileFragment"
+                app:destination="@id/profileFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_notificationsFragment"
+                app:destination="@id/notificationsFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_attendanceFragment"
+                app:destination="@id/attendanceFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_feesFragment"
+                app:destination="@id/feesFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_calenderFragment"
+                app:destination="@id/calenderFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_subjectsFragment"
+                app:destination="@id/subjectsFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_addStudyMaterialsFragment"
+                app:destination="@id/addStudyMaterialsFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_galleryFragment"
+                app:destination="@id/galleryFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_coursesFragment"
+                app:destination="@id/coursesFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_jobsAletrsFragment"
+                app:destination="@id/jobsAletrsFragment" />
+            <action
+                android:id="@+id/action_homeScreenFragment_to_aboutFragment"
+                app:destination="@id/aboutFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/profileFragment"
+            android:name="com.unikey.android.ui.profile.ProfileFragment"
+            android:label="fragment_profile"
+            tools:layout="@layout/fragment_profile" />
+        <action
+            android:id="@+id/action_global_loginScreenFragment"
+            app:destination="@id/loginScreenFragment"
+            app:popUpTo="@id/main_nav" />
+        <fragment
+            android:id="@+id/notificationsFragment"
+            android:name="com.unikey.android.ui.notifications.NotificationsFragment"
+            android:label="fragment_notifications"
+            tools:layout="@layout/fragment_notifications" >
+            <action
+                android:id="@+id/action_notificationsFragment_to_notificationContentFragment2"
+                app:destination="@id/notificationContentFragment2" />
+            <action
+                android:id="@+id/action_notificationsFragment_to_addNotificationFragment"
+                app:destination="@id/addNotificationFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/notificationContentFragment2"
+            android:name="com.unikey.android.ui.notifications.NotificationContentFragment"
+            android:label="fragment_notification_content"
+            tools:layout="@layout/fragment_notification_content" >
+            <argument
+                android:name="notification_data"
+                app:argType="com.unikey.android.objects.NotificationObj" />
+        </fragment>
+        <fragment
+            android:id="@+id/attendanceFragment"
+            android:name="com.unikey.android.ui.attendance.AttendanceFragment"
+            android:label="fragment_attendance"
+            tools:layout="@layout/fragment_attendance" />
+        <fragment
+            android:id="@+id/addNotificationFragment"
+            android:name="com.unikey.android.ui.notifications.AddNotificationFragment"
+            android:label="fragment_add_notification"
+            tools:layout="@layout/fragment_add_notification" />
+        <fragment
+            android:id="@+id/feesFragment"
+            android:name="com.unikey.android.ui.fees.FeesFragment"
+            android:label="fragment_fees"
+            tools:layout="@layout/fragment_fees" />
+        <fragment
+            android:id="@+id/calenderFragment"
+            android:name="com.unikey.android.ui.calendar.CalendarFragment"
+            android:label="CalenderFragment" />
+        <fragment
+            android:id="@+id/subjectsFragment"
+            android:name="com.unikey.android.ui.studymaterials.ui.SubjectsFragment"
+            android:label="fragment_subjects"
+            tools:layout="@layout/fragment_subjects" >
+            <action
+                android:id="@+id/action_subjectsFragment_to_studyMaterialsFragment"
+                app:destination="@id/studyMaterialsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/studyMaterialsFragment"
+            android:name="com.unikey.android.ui.studymaterials.ui.StudyMaterialsFragment"
+            android:label="fragment_study_materials"
+            tools:layout="@layout/fragment_study_materials" >
+            <argument
+                android:name="sub_name"
+                app:argType="string" />
+        </fragment>
+        <fragment
+            android:id="@+id/addStudyMaterialsFragment"
+            android:name="com.unikey.android.ui.studymaterials.ui.AddStudyMaterialsFragment"
+            android:label="fragment_add_study_materilas"
+            tools:layout="@layout/fragment_add_study_materilas" />
+        <fragment
+            android:id="@+id/galleryFragment"
+            android:name="com.unikey.android.ui.gallery.GalleryFragment"
+            android:label="fragment_gallery"
+            tools:layout="@layout/fragment_gallery" />
+        <fragment
+            android:id="@+id/coursesFragment"
+            android:name="com.unikey.android.ui.certificatecouses.CoursesFragment"
+            android:label="fragment_courses"
+            tools:layout="@layout/fragment_courses" />
+        <fragment
+            android:id="@+id/jobsAletrsFragment"
+            android:name="com.unikey.android.ui.jobalerts.JobsAlertsFragment"
+            android:label="JobsAletrsFragment" />
+        <fragment
+            android:id="@+id/aboutFragment"
+            android:name="com.unikey.android.ui.about.AboutFragment"
+            android:label="fragment_about"
+            tools:layout="@layout/fragment_about" />
+    </navigation>
 </navigation>
